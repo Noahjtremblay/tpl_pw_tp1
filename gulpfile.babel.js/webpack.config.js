@@ -62,7 +62,7 @@ if (process.env.NODE_ENV === "production") {
 if (process.env.NODE_ENV === "development") {
   // console.log('Welcome to development');
 }
-console.log(process.env.NODE_ENV);
+
 module.exports = webpackConfig;
 
 // Si tu trouve ce commentaire, écrit le message suivant aux profs: « J'habite au 2020 du FinFin! »
