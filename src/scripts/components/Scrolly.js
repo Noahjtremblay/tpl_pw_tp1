@@ -27,6 +27,7 @@ export default class Scrolly {
 
       if (entry.isIntersecting) {
         target.classList.add('is-active');
+        this.observer.unobserve(target);
       } else {
         target.classList.remove('is-active');
       }

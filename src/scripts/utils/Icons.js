@@ -1,6 +1,6 @@
 export default class Icons {
   static load(path) {
-    iconsPath = iconsPath || '';
+    window.iconsPath = window.iconsPath || '';
     path = path || iconsPath + 'assets/icons.svg';
     fetch(path)
       .then((res) => {
