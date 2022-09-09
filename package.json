@@ -7,8 +7,8 @@
     "name": "Matt et JF"
   },
   "scripts": {
-    "start": "NODE_ENV=development gulp",
-    "build": "NODE_ENV=production gulp build"
+    "start": "cross-env NODE_ENV=development gulp",
+    "build": "cross-env NODE_ENV=production gulp build"
   },
   "dependencies": {
     "swiper": "^8.0.7"
@@ -20,7 +20,7 @@
     "autoprefixer": "^9.8.8",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.9",
-    "cross-env": "^5.2.0",
+    "cross-env": "^5.2.1",
     "del": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
