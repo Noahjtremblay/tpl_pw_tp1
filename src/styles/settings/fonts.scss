@@ -7,7 +7,13 @@
     --font-secondary: 'Fira Code', monospace;
 
     --font-size-content: #{typo(16px, 18px)};
+    --font-size-nav: #{typo(16px, 28px)};
 
     /// Grosseur des textes
     --font-size-h1: #{typo(100px, 200px)};
+    --font-size-h2: #{typo(24px, 50px)};
+    --font-size-h2: #{typo(24px, 50px)};
+    --font-size-h3: #{typo(24px, 40px)};
+    --font-size-h4: #{typo(16px, 20px)};
+    --font-size-bouton: #{typo(20px, 36px)};
 }

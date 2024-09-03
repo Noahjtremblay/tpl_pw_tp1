@@ -4,10 +4,22 @@
    ========================================================================== */
 
 a {
-    color: inherit;
+    color: var(--color-primary);
     text-decoration: none;
 
     &:hover {
-        color: var(--color-primary);
+        color: var(--color-white);
+    }
+}
+
+.btn {
+    font-size: var(--font-size-bouton);
+    color: var(--color-primary);
+    border: var(--color-primary) solid 3px;
+    padding: 10px;
+
+    &:hover {
+        color: var(--color-white);
+        border-color: var(--color-white);
     }
 }

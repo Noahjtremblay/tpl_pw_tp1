@@ -12,13 +12,10 @@
         z-index: -1;
     }
     .wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
         text-align: center;
         h1 {
             color: var(--color-primary);
+            padding-bottom: 60px;
         }
     }
 }

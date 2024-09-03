@@ -10,7 +10,7 @@ h5,
 h6 {
     font-family: var(--font-secondary);
     line-height: 1.1;
-    font-weight: bold;
+
     margin: 0;
 }
 
@@ -22,14 +22,17 @@ h1 {
 
 h2 {
     font-size: var(--font-size-h2);
+    text-transform: uppercase;
 }
 
 h3 {
     font-size: var(--font-size-h3);
+    font-weight: 600;
 }
 
 h4 {
     font-size: var(--font-size-h4);
+    font-weight: 400;
 }
 
 h5 {

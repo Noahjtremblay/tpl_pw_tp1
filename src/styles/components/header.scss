@@ -1,0 +1,14 @@
+header {
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        ul {
+            display: flex;
+            gap: 20px;
+            li {
+                list-style: none;
+            }
+        }
+    }
+}
