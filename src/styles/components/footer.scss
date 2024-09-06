@@ -1,0 +1,18 @@
+footer {
+    background-color: var(--color-bg-primary);
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    ul {
+        display: flex;
+        gap: 10px;
+
+        li {
+            list-style: none;
+        }
+    }
+    p {
+        color: var(--color-primary);
+    }
+}

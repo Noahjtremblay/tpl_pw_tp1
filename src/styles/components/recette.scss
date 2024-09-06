@@ -1,4 +1,6 @@
 .recette {
+    background-color: var(--color-primary);
+    color: var(--color-black);
     .intro {
         padding-top: 60px;
     }
@@ -14,10 +16,10 @@
         gap: 20px;
 
         .icon {
-            color: var(--color-white);
+            color: var(--color-black);
         }
         p {
-            color: var(--color-white);
+            color: var(--color-black);
             text-transform: uppercase;
         }
     }
