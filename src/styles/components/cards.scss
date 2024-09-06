@@ -1,11 +1,13 @@
 .cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: start;
-    align-items: center;
-    gap: 50px;
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: start;
+        align-items: center;
+        gap: 50px;
 
-    margin-top: 50px;
+        margin-top: 50px;
+    }
 
     a {
         position: relative;
