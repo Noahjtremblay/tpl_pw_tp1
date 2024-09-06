@@ -10,5 +10,10 @@ header {
                 list-style: none;
             }
         }
+        .logo {
+            font-family: var(--font-primary);
+            text-transform: uppercase;
+            font-size: var(--font-size-h3);
+        }
     }
 }

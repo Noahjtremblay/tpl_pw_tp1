@@ -1,0 +1,35 @@
+.recette {
+    .intro {
+        padding-top: 60px;
+    }
+    .content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .favorie {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+
+        .icon {
+            color: var(--color-white);
+        }
+        p {
+            color: var(--color-white);
+            text-transform: uppercase;
+        }
+    }
+}
+
+.swiper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        aspect-ratio: 16/9;
+    }
+}
