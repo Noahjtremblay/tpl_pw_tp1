@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-scrollpercent="0.3" data-no-scroll>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,18 +16,24 @@
 
   <body>
 
-    <header>
+    <header class="header" data-component="Header" >
       <div class="wrapper">
-        <a href="index.html" class="logo">Chez johnny</a>
-        <nav>
-          <ul class="nav__menu">
-            <a href="liste-recettes.html">
-              <li> Nos recettes</li>
-            </a>
-            <a href="">
-              <li>Nous contacter</li>
-            </a>
+          <a href="index.html" class="logo">chez johnny</a>
+      <nav class="nav-primary">
+          <ul>
+              <li>
+                  <a href="#" class="nav-primary__item ">Nos recettes</a>
+              </li>
+              
+              <li>
+                  <a href="contact.html" class="nav-primary__item ">Nous joindre</a>
+              </li>
           </ul>
-        </nav>
-      </div>
-    </header>
+      </nav>
+      <button class="header__toggle js-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+      </button></div>
+      
+  </header>

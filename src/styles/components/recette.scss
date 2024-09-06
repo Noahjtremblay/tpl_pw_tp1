@@ -2,6 +2,10 @@
     background-color: var(--color-primary);
     color: var(--color-black);
     .intro {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 60px;
+        align-items: start;
         padding-top: 60px;
     }
     .content {
@@ -33,5 +37,9 @@
     img {
         object-fit: cover;
         aspect-ratio: 16/9;
+    }
+
+    p {
+        margin: 0;
     }
 }

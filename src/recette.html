@@ -9,15 +9,23 @@
     </div>
     <div class="wrapper">
         <div class="intro">
-            <h3 class="chef">Cette recette vous est proposé par "chef"</h3>
-            <p>
-                Découvrez notre hamburger gourmet, composé d'un steak haché juteux cuit à la perfection, surmonté d'une
-                tranche de cheddar fondant. Le tout est enveloppé dans un pain à burger légèrement beurré et grillé,
-                offrant un contraste parfait entre croquant et moelleux. Complétez avec des feuilles de laitue fraîche,
-                des tranches de tomate juteuse, des oignons émincés et des cornichons croquants. Ajoutez votre sauce
-                préférée pour une touche finale savoureuse. Un régal simple et irrésistible pour tous les amateurs de
-                burgers !
-            </p>
+            <div class="intro-content">
+                <h3 class="chef">Cette recette vous est proposé par "chef"</h3>
+                <p>
+                    Découvrez notre hamburger gourmet, composé d'un steak haché juteux cuit à la perfection, surmonté
+                    d'une tranche de cheddar fondant. Le tout est enveloppé dans un pain à burger légèrement beurré et
+                    grillé, offrant un contraste parfait entre croquant et moelleux. Complétez avec des feuilles de
+                    laitue fraîche, des tranches de tomate juteuse, des oignons émincés et des cornichons croquants.
+                    Ajoutez votre sauce préférée pour une touche finale savoureuse. Un régal simple et irrésistible pour
+                    tous les amateurs de burgers !
+                </p>
+            </div>
+            <!--Existe si favorie-->
+            <div class="favorie">
+                <svg class="icon icon--lg">
+                    <use xlink:href="#icon-favorie"></use>
+                </svg>
+            </div>
         </div>
         <div class="content">
             <div class="ingredient">
@@ -45,12 +53,7 @@
                 </ul>
             </div>
         </div>
-        <div class="favorie">
-            <svg class="icon icon--lg">
-                <use xlink:href="#icon-certified"></use>
-            </svg>
-            <p>Certifier bon dans l'bedon</p>
-        </div>
+
         <div class="swiper" data-component="Carousel" data-slides="1" data-autoplay="true">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
