@@ -6,32 +6,39 @@
             <a href="liste-recettes.html" class="btn">Voir toutes les recettes</a>
         </div>
     </div>
-    <div class="favoris">
+    <div class="content">
         <div class="wrapper">
-            <h2>Les recettes Coup de coeur</h2>
-            <div class="cards">
-                <div class="wrapper">
-                    <a href="">
-                        <div class="card">
-                            <div class="card_media"><img src="assets/images/recette01.jpg" alt="" /></div>
-                            <div class="card_content">
-                                <h4>Plat principale</h4>
-                                <h3>Tilapia aux épices</h3>
+            <?php the_content(); ?>
+        </div>
+    </div>
+    <?php if(get_field('favorite_title')) : ?>
+        <div class="favoris">
+            <div class="wrapper">
+                <h2><?php the_field('favorite_title')?></h2>
+                <div class="cards">
+                    <div class="wrapper">
+                        <a href="">
+                            <div class="card">
+                                <div class="card_media"><img src="assets/images/recette01.jpg" alt="" /></div>
+                                <div class="card_content">
+                                    <h4>Plat principale</h4>
+                                    <h3>Tilapia aux épices</h3>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <a href="">
-                        <div class="card">
-                            <div class="card_media"><img src="assets/images/recette01.jpg" alt="" /></div>
-                            <div class="card_content">
-                                <h4>Plat principale</h4>
-                                <h3>Tilapia aux épices</h3>
+                        </a>
+                        <a href="">
+                            <div class="card">
+                                <div class="card_media"><img src="assets/images/recette01.jpg" alt="" /></div>
+                                <div class="card_content">
+                                    <h4>Plat principale</h4>
+                                    <h3>Tilapia aux épices</h3>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
 
 <?php get_footer(); ?>
