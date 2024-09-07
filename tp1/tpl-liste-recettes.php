@@ -20,19 +20,54 @@
             </div>
         </div>
 
+        <?php
+
+            // Affiche les jeux de la catégorie plates-formes
+                /*$arg = array(
+                    'post_type' => 'jeu',
+                    'post_status' => 'publish',
+                    'posts_per_page' => '2',
+                    'category_name' => 'plates-formes',
+                    
+                );
+                $query = new Wp_Query($arg);
+            ?>*/
+
+            // Affiche les jeux d'action OU de simulation qui ont une note de 4 et moins
+               $arg = array(
+                    'post_type' => 'recette',
+                    'post_status' => 'publish',
+                    'posts_per_page' => -1,                    
+                );
+                $query = new Wp_Query($arg);
+            ?>
+
         <div class="cards">
             <div class="wrapper">
-                <a href="recette.html">
-                    <div class="card">
-                        <div class="card_media"><img src="assets/images/recette01.jpg" alt="" /></div>
-                        <div class="card_content">
-                            <h4 class="categorie">Plat principale</h4>
-                            <h3>hamburger</h3>
-                            <p>Hamburger gourmet, viande juteuse, garnitures fraîches.</p>
-                        </div>
-                    </div>
-                </a>
-                <a href="recette.html">
+                
+                <?php  if ($query->have_posts()) : ?>
+                    <?php while ($query->have_posts()) : $query->the_post(); ?>
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="card">
+                            <div class="card_media">
+                                <?php 
+                                        $image = get_field('thumbnail');
+                                        if( !empty( $image ) ): ?>
+                                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                            <?php endif; ?></div>
+                                            <div class="card_content">
+                                                <?php $categories = get_category();?>
+                                                <h4 class="categorie"><?php the_category($categories);?></h4>
+                                                <h3><?php the_title(); ?></h3>
+                                    <p><?php the_field('catchphrase'); ?></p>
+                                </div>
+                            </div>
+                        </a>
+                    <?php endwhile ?>
+                <?php endif ?>
+                <?php wp_reset_postdata(); ?>
+
+                <!--<a href="recette.html">
                     <div class="card">
                         <div class="card_media"><img src="assets/images/recette02.jpg" alt="" /></div>
                         <div class="card_content">
