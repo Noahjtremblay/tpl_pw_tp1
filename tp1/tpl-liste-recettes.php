@@ -56,8 +56,8 @@
                                             <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
                                             <?php endif; ?></div>
                                             <div class="card_content">
-                                                <?php $categories = get_category();?>
-                                                <h4 class="categorie"><?php the_category($categories);?></h4>
+                                                <!--<?php $categories = get_categories();?>
+                                                <h4 class="categorie"><?php the_category($categories);?></h4>-->
                                                 <h3><?php the_title(); ?></h3>
                                     <p><?php the_field('catchphrase'); ?></p>
                                 </div>
