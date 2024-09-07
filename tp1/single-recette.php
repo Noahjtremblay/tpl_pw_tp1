@@ -2,45 +2,34 @@
 
 <div class="recette">
         <div class="hero">
-            <img src="assets/images/recette01.jpg" alt="" />
+        <?php the_post_thumbnail(); ?>
             <div class="wrapper">
-                <h1>Hamburger</h1>
+                <h1><?php the_title(); ?></h1>
             </div>
         </div>
         <div class="wrapper">
             <div class="intro">
                 <div class="intro-content">
-                    <h3 class="chef">Cette recette vous est proposé par "chef"</h3>
-                    <p>
-                        Découvrez notre hamburger gourmet, composé d'un steak haché juteux cuit à la perfection, surmonté
-                        d'une tranche de cheddar fondant. Le tout est enveloppé dans un pain à burger légèrement beurré et
-                        grillé, offrant un contraste parfait entre croquant et moelleux. Complétez avec des feuilles de
-                        laitue fraîche, des tranches de tomate juteuse, des oignons émincés et des cornichons croquants.
-                        Ajoutez votre sauce préférée pour une touche finale savoureuse. Un régal simple et irrésistible pour
-                        tous les amateurs de burgers !
-                    </p>
+                    <?php $chefs = get_field('rel_chef'); ?>
+                    <?php if($chefs) : ?>
+                        <?php foreach($chefs as $chefs) : ?>
+                            <h3>Cette recette à été fait par <?php echo get_the_title($chefs->ID)?></h3>
+                        <?php endforeach; ?> 
+                    <?php endif; ?>
+                    <?php the_content(); ?>
                 </div>
                 <!--Existe si favorie-->
-                <div class="favorie">
-                    <svg class="icon icon--lg">
-                        <use xlink:href="#icon-favorie"></use>
-                    </svg>
-                </div>
+                <?php if(get_field('favorite')) : ?>
+                    <div class="favorie">
+                        <svg class="icon icon--lg">
+                            <use xlink:href="#icon-favorie"></use>
+                        </svg>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="content">
                 <div class="ingredient">
-                    <h2>Ingrédient</h2>
-                    <ul>
-                        <li>Pain à burger (brioche ou classique)</li>
-                        <li>Steak haché de bœuf (ou autre viande)</li>
-                        <li>Fromage (cheddar, suisse, etc.)</li>
-                        <li>Laitue</li>
-                        <li>Tomate</li>
-                        <li>Oignon</li>
-                        <li>Cornichons</li>
-                        <li>Sauce (mayonnaise, ketchup, moutarde)</li>
-                        <li>Sel et poivre</li>
-                    </ul>
+                    <?php the_field('ingredient')?>
                 </div>
 
                 <div class="preparation">
@@ -54,24 +43,25 @@
                 </div>
             </div>
 
-            <div class="swiper" data-component="Carousel" data-slides="1" data-autoplay="true">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img src="assets/images/recette01.jpg" alt="" />
-                        <p class="legende">Beau burger dit moi</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/recette01.jpg" alt="" />
-                        <p class="legende">Beau burger dit moi</p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="assets/images/recette01.jpg" alt="" />
-                        <p class="legende">Beau burger dit moi</p>
+            <?php if (have_rows('galerie')) : ?>
+                <div class="swiper" data-component="Carousel" data-slides="1" data-autoplay="true">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <?php while (have_rows('galerie')) : the_row();?>
+                            <div class="swiper-slide">
+                                <?php 
+                                    $image = get_sub_field('image');
+                                    if( !empty( $image ) ): 
+                                    ?>
+                                        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                    <?php endif; ?>
+                                <p class="legende"><?php the_sub_field('legend') ?></p>
+                            </div>
+                        <?php endwhile; ?>
                     </div>
                 </div>
-            </div>
+            <?php endif; ?>
         </div>
 
         <?php get_footer(); ?>
