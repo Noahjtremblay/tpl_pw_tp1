@@ -23,7 +23,11 @@
                     'post_type' => 'recette',
                     'post_status' => 'publish',
                     'posts_per_page' => '2',
-                    'category_name' => 'plates-formes',
+                    'meta_key' => 'favorite',
+                    'meta_value' => '1',
+                    'meta_compare' => '=',
+                    'meta_type' => 'NUMERIC',
+                    
                     
                 );
                 $query = new Wp_Query($arg);
@@ -38,12 +42,15 @@
                         <?php  if ($query->have_posts()) : ?>
                             <?php while ($query->have_posts()) : $query->the_post(); ?>
                                 <a href="<?php the_permalink(); ?>">
-                                    < class="card">
-                                        <div class="card_media"><?php 
-                                $image = get_field('thumbnail');
-                                if( !empty( $image ) ): ?>
-                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                                <?php endif; ?></div>
+                                    <div class="card">
+                                        <div class="card_media">
+                                            <?php 
+                                                $image = get_field('thumbnail');
+                                                if( !empty( $image ) ): 
+                                            ?>
+                                            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                                            <?php endif; ?>
+                                        </div>
                                         <div class="card_content">
                                             <?php $categories = array(); ?>
                                             <?php foreach(get_the_category() as $category) : ?>
@@ -56,6 +63,7 @@
                                             <?php endif; ?>
                                             <h3><?php the_title(); ?></h3>
                                         </div>
+                                    </div>
                                     
                                 </a>
                             <?php endwhile ?>

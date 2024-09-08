@@ -127,3 +127,17 @@ function creation_cpt_chef() {
 
 }
 add_action( 'init', 'creation_cpt_chef', 0 );
+
+
+//Page d'options ACF
+if ( function_exists('acf_add_options_page')){
+	//on ajoute une page d'option
+
+	acf_add_options_page(array(
+		'page_title' => 'Options générales',
+		'menu_title' => 'Options générales',
+		'menu_slug' => 'pw-theme-options-generales',
+		'capability' => 'edit_posts',
+		'redirect' => false
+	));
+}
